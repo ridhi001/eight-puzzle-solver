@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>8 Puzzle Game</title>
+    <meta name="description"
+        content="A beautifully designed 8-puzzle sliding tile game. Solve the puzzle by arranging tiles in order!" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="bg-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">⬜</span>
+                <h1>8 <span class="accent">Puzzle</span></h1>
+            </div>
+            <p class="subtitle">Slide tiles to restore order</p>
+        </header>
+
+        <div class="game-wrapper">
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card" id="moves-card">
+                    <span class="stat-icon">🎯</span>
+                    <div class="stat-info">
+                        <span class="stat-label">Moves</span>
+                        <span class="stat-value" id="move-count">0</span>
+                    </div>
+                </div>
+                <div class="stat-card" id="timer-card">
+                    <span class="stat-icon">⏱️</span>
+                    <div class="stat-info">
+                        <span class="stat-label">Time</span>
+                        <span class="stat-value" id="timer">00:00</span>
+                    </div>
+                </div>
+                <div class="stat-card" id="best-card">
+                    <span class="stat-icon">🏆</span>
+                    <div class="stat-info">
+                        <span class="stat-label">Best</span>
+                        <span class="stat-value" id="best-moves">--</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Difficulty Selector -->
+            <div class="difficulty-row">
+                <button class="diff-btn active" id="diff-easy" data-diff="easy">Easy</button>
+                <button class="diff-btn" id="diff-medium" data-diff="medium">Medium</button>
+                <button class="diff-btn" id="diff-hard" data-diff="hard">Hard</button>
+            </div>
+
+            <!-- Puzzle Board -->
+            <div class="board-container">
+                <div class="board" id="puzzle-board" role="grid" aria-label="8 puzzle game board"></div>
+
+                <!-- Win Overlay -->
+                <div class="win-overlay" id="win-overlay">
+                    <div class="win-card">
+                        <div class="win-emoji">🎉</div>
+                        <h2>Puzzle Solved!</h2>
+                        <div class="win-stats">
+                            <div class="win-stat">
+                                <span class="win-stat-label">Moves</span>
+                                <span class="win-stat-value" id="win-moves">0</span>
+                            </div>
+                            <div class="win-stat">
+                                <span class="win-stat-label">Time</span>
+                                <span class="win-stat-value" id="win-time">00:00</span>
+                            </div>
+                        </div>
+                        <button class="btn-play-again" id="play-again-btn">Play Again</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="controls">
+                <button class="btn btn-shuffle" id="shuffle-btn">
+                    <span class="btn-icon">🔀</span> Shuffle
+                </button>
+                <button class="btn btn-solve" id="solve-btn">
+                    <span class="btn-icon">✨</span> Solve
+                </button>
+                <button class="btn btn-hint" id="hint-btn">
+                    <span class="btn-icon">💡</span> Hint
+                </button>
+            </div>
+
+            <!-- Goal State Preview -->
+            <div class="goal-section">
+                <p class="goal-title">Goal State</p>
+                <div class="goal-board" id="goal-board"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
